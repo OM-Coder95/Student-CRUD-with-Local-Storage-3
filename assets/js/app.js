@@ -30,7 +30,7 @@ function showOnUI(arr) {
                                     <td>${ele.feeStatus}</td>
                                     <td class="d-flex justify-content-between">
                                         <button onclick="editStudent(this)" class="btn btn-sm btn-primary mr-2">Edit</button>
-                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                        <button onclick="removeStudent(this)" class="btn btn-sm btn-danger">Delete</button>
                                     </td>
                                 </tr>
     `;
@@ -72,7 +72,7 @@ function onStudentAdd(event) {
                                     <td>${newStudent.feeStatus}</td>
                                     <td class="d-flex justify-content-between">
                                         <button onclick="editStudent(this)" class="btn btn-sm btn-primary mr-2">Edit</button>
-                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                        <button onclick="removeStudent(this)" class="btn btn-sm btn-danger">Delete</button>
                                     </td>
   `;
 
@@ -136,6 +136,31 @@ function onUpdateClick(event) {
   updateBtn.classList.add("d-none");
   submitBtn.classList.remove("d-none");
   form.reset();
+}
+
+// Remove Student
+
+function removeStudent(ele) {
+  let removeId = ele.closest("tr").id;
+
+  let getConfirmed = confirm(
+    "Are you sure, You want to delete this Student Enrollment?",
+  );
+
+  if (getConfirmed) {
+    let getIndex = enrollmentArr.findIndex((ele) => ele.id === removeId);
+
+    enrollmentArr.splice(getIndex, 1);
+    localStorage.setItem("enrollmentArr", JSON.stringify(enrollmentArr));
+
+    ele.closest("tr").remove();
+
+    let srNo = [
+      ...document.querySelectorAll("#studentContainer tr td:first-child"),
+    ];
+
+    srNo.forEach((ele, i) => (ele.innerText = i + 1));
+  }
 }
 
 form.addEventListener("submit", onStudentAdd);
