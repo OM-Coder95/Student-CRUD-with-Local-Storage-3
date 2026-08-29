@@ -4,6 +4,8 @@ const studentContainer = document.getElementById("studentContainer");
 const form = document.getElementById("form");
 const course = document.getElementById("course");
 const joiningDate = document.getElementById("joiningDate");
+const updateBtn = document.getElementById("updateBtn");
+const submitBtn = document.getElementById("submitBtn");
 
 // Database
 
@@ -27,7 +29,7 @@ function showOnUI(arr) {
                                     <td>${ele.joiningDate}</td>
                                     <td>${ele.feeStatus}</td>
                                     <td class="d-flex justify-content-between">
-                                        <button class="btn btn-sm btn-primary mr-2">Edit</button>
+                                        <button onclick="editStudent(this)" class="btn btn-sm btn-primary mr-2">Edit</button>
                                         <button class="btn btn-sm btn-danger">Delete</button>
                                     </td>
                                 </tr>
@@ -69,12 +71,38 @@ function onStudentAdd(event) {
                                     <td>${newStudent.joiningDate}</td>
                                     <td>${newStudent.feeStatus}</td>
                                     <td class="d-flex justify-content-between">
-                                        <button class="btn btn-sm btn-primary mr-2">Edit</button>
+                                        <button onclick="editStudent(this)" class="btn btn-sm btn-primary mr-2">Edit</button>
                                         <button class="btn btn-sm btn-danger">Delete</button>
                                     </td>
   `;
 
   studentContainer.append(tr);
+
+  form.reset();
+}
+
+// edit
+
+function editStudent(ele) {
+  let editId = ele.closest("tr").id;
+  localStorage.setItem("editId", editId);
+
+  let editObj = enrollmentArr.find((ele) => ele.id === editId);
+
+  course.value = editObj.course;
+
+  [...document.querySelectorAll(`input[name="skills"]`)].forEach(
+    (skill) => (skill.checked = editObj.skills.includes(skill.value)),
+  );
+
+  joiningDate.value = editObj.joiningDate;
+
+  document.querySelector(
+    `input[name="feeStatus"][value="${editObj.feeStatus}"]`,
+  ).checked = true;
+
+  submitBtn.classList.add("d-none");
+  updateBtn.classList.remove("d-none");
 }
 
 form.addEventListener("submit", onStudentAdd);

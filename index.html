@@ -54,21 +54,31 @@
 
                             <div class="form-group">
                                 <div class="row">
-                                    <label for="skills" class="col-md-3">Skills</label>
+                                    <label class="col-md-3">Skills</label>
 
                                     <div class="col-md-9">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <input type="checkbox" name="skills" value="HTML"> HTML
+                                                <label for="HTML">
+                                                    <input type="checkbox" name="skills" id="HTML" value="HTML"> HTML
+                                                </label>
                                             </div>
                                             <div class="col-md-6">
-                                                <input type="checkbox" name="skills" value="CSS"> CSS
+                                                <label for="CSS">
+                                                    <input type="checkbox" name="skills" id="CSS" value="CSS"> CSS
+                                                </label>
                                             </div>
                                             <div class="col-md-6">
-                                                <input type="checkbox" name="skills" value="JavaScript"> JavaScript
+                                                <label for="JavaScript">
+                                                    <input type="checkbox" name="skills" id="JavaScript"
+                                                        value="JavaScript"> JavaScript
+                                                </label>
                                             </div>
                                             <div class="col-md-6">
-                                                <input type="checkbox" name="skills" value="Bootstrap"> Bootstrap
+                                                <label for="Bootstrap">
+                                                    <input type="checkbox" name="skills" id="Bootstrap"
+                                                        value="Bootstrap"> Bootstrap
+                                                </label>
                                             </div>
                                         </div>
                                     </div>
@@ -92,10 +102,12 @@
 
                                     <div class="col-md-9">
                                         <div>
-                                            <label for="Pending"><input type="radio" name="feeStatus" value="Pending">Pending</label>
+                                            <label for="Pending"><input type="radio" name="feeStatus" value="Pending"
+                                                    id="Pending">Pending</label>
                                         </div>
                                         <div>
-                                            <label for="Paid"><input type="radio" name="feeStatus " value="Paid">Paid</label>
+                                            <label for="Paid"><input type="radio" name="feeStatus" value="Paid"
+                                                    id="Paid">Paid</label>
                                         </div>
                                     </div>
                                 </div>
@@ -104,7 +116,8 @@
 
 
                         <div class="form-group">
-                            <button class="btn btn-sm btn-primary btn-block">Add Enrollment</button>
+                            <button type="submit" class="btn btn-sm btn-primary btn-block" id="submitBtn">Add Enrollment</button>
+                            <button type="button" class="btn btn-sm btn-primary btn-block d-none" id="updateBtn">Update Enrollment</button>
                         </div>
 
                     </div>
