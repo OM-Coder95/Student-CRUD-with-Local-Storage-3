@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f4f6f9;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+}
+
+.mainHeading {
+    background-color: #fff;
+    padding: 20px 0;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #007bff;
+}
+
+.mainHeading h3:first-child {
+    color: #007bff;
+    font-size: 28px;
+}
+
+.mainHeading h3:last-child {
+    color: #555;
+    font-size: 18px;
+}
+
+/* card */
+
+.studentCard {
+    border: none;
+    border-radius: 18px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.studentCardHeader {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 15px 20px;
+}
+
+.studentCardHeader h3,
+.studentCardHeader h4 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.studentCardBody {
+    padding: 25px;
+
+}
+
+.studentFormGroup {
+    margin-bottom: 20px;
+}
+
+.studentFormGroup .row label {
+    font-weight: 500;
+    color: #444;
+}
+
+/* checkbox */
+
+input[type="checkbox"],
+input[type="radio"] {
+    cursor: pointer;
+}
+
+/* radio */
+
+input[type="radio"] {
+    margin-right: 6px;
+}
+
+/* form buttons */
+
+.submitBtn,
+.updateBtn {
+    border-radius: 5px;
+    font-weight: 600;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.submitBtn:hover,
+.updateBtn:hover {
+    transform: translateY(-2px);
+}
+
+/* table */
+
+.studentTable {
+    margin-bottom: 0;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.studentTable thead th {
+    background-color: #343a40;
+    color: #ffffff;
+    border-color: #343a40;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.studentTable tbody td {
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+.studentTable tbody tr {
+    transition: 0.2s;
+}
+
+.studentTable tbody tr:hover {
+    background-color: #f1f7ff;
+}

@@ -14,10 +14,10 @@
 </head>
 
 <body>
-    <div class="container pt-3 mb-5">
+    <div class="container mainHeading">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h3>Student Entrollment</h3>
+                <h3 class="h3">Student Entrollment</h3>
                 <h3>Manage Course Registration</h3>
             </div>
         </div>
@@ -27,20 +27,20 @@
         <div class="row">
             <div class="col-md-4">
                 <form class="form" id="form">
-                    <div class="card">
+                    <div class="card studentCard">
 
-                        <div class="card-header">
+                        <div class="card-header studentCardHeader">
                             <h3>Add Entrollment</h3>
                         </div>
 
-                        <div class="card-body">
-                            <div class="form-group">
+                        <div class="card-body studentCardBody">
+                            <div class="form-group studentFormGroup">
                                 <div class="row">
                                     <label for="course" class="col-md-3">Course</label>
 
                                     <div class="col-md-9">
-                                        <select id="course" class="form-control" id="course">
-                                            <option value="" disabled>Select Course</option>
+                                        <select id="course" class="form-control" id="course" required>
+                                            <option value="" disabled selected>Select Course</option>
                                             <option value="Angular">Angular</option>
                                             <option value="React">React</option>
                                             <option value="Java">Java</option>
@@ -90,7 +90,7 @@
                                     <label for="joiningDate" class="col-md-3">Join Date</label>
 
                                     <div class="col-md-9">
-                                        <input type="date" class="form-control" id="joiningDate">
+                                        <input type="date" class="form-control" id="joiningDate" required>
                                     </div>
                                 </div>
                             </div>
@@ -103,7 +103,7 @@
                                     <div class="col-md-9">
                                         <div>
                                             <label for="Pending"><input type="radio" name="feeStatus" value="Pending"
-                                                    id="Pending">Pending</label>
+                                                    id="Pending" required>Pending</label>
                                         </div>
                                         <div>
                                             <label for="Paid"><input type="radio" name="feeStatus" value="Paid"
@@ -116,8 +116,11 @@
 
 
                         <div class="form-group">
-                            <button type="submit" class="btn btn-sm btn-primary btn-block" id="submitBtn">Add Enrollment</button>
-                            <button type="button" class="btn btn-sm btn-primary btn-block d-none" id="updateBtn">Update Enrollment</button>
+                            <button type="submit" class="btn btn-sm btn-primary btn-block submitBtn" id="submitBtn">Add
+                                Enrollment</button>
+                            <button type="button" class="btn btn-sm btn-primary btn-block d-none updateBtn"
+                                id="updateBtn">Update
+                                Enrollment</button>
                         </div>
 
                     </div>
@@ -133,7 +136,7 @@
                     </div>
 
                     <div class="card-body">
-                        <table class="table table-bordered table-responsive">
+                        <table class="table table-bordered table-responsive studentTable">
                             <thead>
                                 <tr>
                                     <th>Sr. No</th>
@@ -166,9 +169,6 @@
             </div>
         </div>
 
-    </div>
-    <div class="col-md-8"></div>
-    </div>
     </div>
 
 
