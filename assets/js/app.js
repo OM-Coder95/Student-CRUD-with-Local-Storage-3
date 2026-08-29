@@ -105,4 +105,38 @@ function editStudent(ele) {
   updateBtn.classList.remove("d-none");
 }
 
+// update
+
+function onUpdateClick(event) {
+  let updateId = localStorage.getItem("editId");
+  localStorage.removeItem("editId");
+
+  let updatedObj = {
+    id: updateId,
+    course: course.value,
+    skills: [...document.querySelectorAll(`input[name="skills"]:checked`)].map(
+      (ele) => ele.value,
+    ),
+    joiningDate: joiningDate.value,
+    feeStatus: document.querySelector(`input[name="feeStatus"]:checked`).value,
+  };
+
+  let getIndex = enrollmentArr.findIndex((ele) => ele.id === updateId);
+
+  enrollmentArr[getIndex] = updatedObj;
+  localStorage.setItem("enrollmentArr", JSON.stringify(enrollmentArr));
+
+  let td = [...document.getElementById(updateId).children];
+
+  td[1].innerText = updatedObj.course;
+  td[2].innerText = updatedObj.skills;
+  td[3].innerText = updatedObj.joiningDate;
+  td[4].innerText = updatedObj.feeStatus;
+
+  updateBtn.classList.add("d-none");
+  submitBtn.classList.remove("d-none");
+  form.reset();
+}
+
 form.addEventListener("submit", onStudentAdd);
+updateBtn.addEventListener("click", onUpdateClick);
